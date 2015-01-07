@@ -1,5 +1,5 @@
 class Employee < ActiveRecord::Base
-  def self.sortByFirstName
+  def self.sort_by_first_name
     self.order(first_name: :asc)
   end
   def self.statistics
@@ -12,10 +12,10 @@ class Employee < ActiveRecord::Base
     self.delete_all
     p "deleted all data successfully"
   end
-  def fullName
-    p "#{self.first_name} #{self.last_name}"
+  def full_name
+    "#{self.first_name} #{self.last_name}"
   end
-  def updatePhone(value)
+  def update_phone(value)
     self.phone=value
     self.save
   end
