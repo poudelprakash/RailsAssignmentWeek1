@@ -32,17 +32,16 @@ class Employee < ActiveRecord::Base
 
   protected
   def set_naming_format
-    self.first_name = self.first_name.downcase.capitalize
-    if self.middle_name!=nil
-      self.middle_name = self.middle_name.downcase.capitalize
-    end
-    self.last_name = self.last_name.downcase.capitalize
+    first_name.capitalize!
+    middle_name.capitalize! if middle_name
+    last_name.capitalize!
   end
 
   def confirm_deletion
     puts 'Are you sure you want to delete'
     input = gets
-    if(input=='y' || input=='Y')
+
+    if(input.downcase.eql? 'y')
       return true
     else
       p "Delete Cancelled"
