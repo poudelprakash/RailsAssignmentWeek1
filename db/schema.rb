@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107073154) do
+ActiveRecord::Schema.define(version: 20150107090700) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
-    t.integer  "phone",       limit: 5
+    t.string   "phone",       limit: 5
     t.integer  "salary",                default: 0
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.string   "designation"
+    t.string   "email"
   end
 
 end
